@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 import AdminLogin from './pages/AdminLogin';
 import AdminDashboard from './pages/AdminDashboard';
 
-// نظام حماية التوجيه: يمنع فتح لوحة التحكم نهائياً إلا بوجود توكن صحيح مسجل بجلسة الأدمن
 const ProtectedRoute = ({ children }) => {
   const token = localStorage.getItem('adminToken');
   return token ? children : <Navigate to="/login" replace />;
