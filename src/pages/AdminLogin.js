@@ -8,14 +8,13 @@ export default function AdminLogin() {
   const [error, setError] = useState('');
   const navigate = useNavigate();
 
-  const BACKEND_URL = process.env.REACT_APP_BACKEND_URL || "http://localhost:5000";
+  const BACKEND_URL = "https://back-yc0g.onrender.com";
 
   const handleLogin = async (e) => {
     e.preventDefault();
     setError('');
     try {
       const res = await axios.post(`${BACKEND_URL}/api/admin/login`, { username, password });
-      // حفظ توكن الجلسة المسلم من السيرفر بنجاح
       localStorage.setItem('adminToken', res.data.token);
       navigate('/dashboard');
     } catch (err) {
