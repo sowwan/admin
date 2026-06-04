@@ -7,7 +7,7 @@ export default function AdminDashboard() {
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
 
-  const BACKEND_URL = process.env.REACT_APP_BACKEND_URL || "http://localhost:5000";
+  const BACKEND_URL = "https://back-yc0g.onrender.com";
 
   useEffect(() => {
     const fetchOrders = async () => {
@@ -26,7 +26,7 @@ export default function AdminDashboard() {
       }
     };
     fetchOrders();
-  }, [navigate, BACKEND_URL]);
+  }, [navigate]);
 
   const handleLogout = () => {
     localStorage.removeItem('adminToken');
@@ -52,7 +52,7 @@ export default function AdminDashboard() {
                 <th style={{ padding: '15px' }}>نوع الخدمة المفعلة</th>
                 <th style={{ padding: '15px' }}>القيمة المالية المدفوعة</th>
                 <th style={{ padding: '15px' }}>حالة المشروع / الاشتراك</th>
-                <th style={{ padding: '15px' }}>تفاصيل المتطلبات البرمجية</th>
+                <th style={{ padding: '15px' }}>تفاصيل المتمتطلبات البرمجية</th>
                 <th style={{ padding: '15px' }}>تاريخ وتوقيت الطلب</th>
               </tr>
             </thead>
